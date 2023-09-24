@@ -1,0 +1,45 @@
+section.home {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	h1 {
+		font-size: 2rem;
+		margin-bottom: 20px;
+		>span {
+			color: #FFD400;
+			background: #000;
+			border: 2px solid #FFD400;
+			padding: 3px 7px;
+			text-transform: uppercase;
+			cursor: pointer;
+
+			&:hover {
+				color: #000;
+				background: #FFD400;
+				border: 2px solid #000;
+			}
+		}
+	}
+
+	p {
+		font-size: 1.5rem;
+	}
+
+	span.link {
+		font-size: 1.5rem;
+		padding: 10px 15px;
+		box-shadow: 0 0 5px 0 rgb(71, 71, 71);
+		text-transform: capitalize;
+		color: #FFD400;
+		background: #000;
+		&:hover{
+			letter-spacing: 2px;
+		}
+	}
+
+	img {
+		width: 600px;
+		margin-bottom: 10px;
+	}
+}
