@@ -9,26 +9,21 @@ import './ProjectForm.scss';
 
 const ProjectForm = ( { btnText } ) => {
 
-	const [erro, setErro] = useState(null);
+	const [ dados, setDados ] = useState( null );
 
-  useEffect(() => {
-    // Função para fazer a requisição GET à API
-    const fetchData = async () => {
-      try {
-        // Faz a requisição GET à URL da API desejada
-        const response = await axios.get('https://api.exemplo.com/dados');
+	useEffect( () => {
+		const fetchData = async () => {
+			try {
+				const response = await axios.get( 'http://localhost:5000/categoria' );
+				setDados( response.data );
+				console.log( dados );
+			} catch ( error ) {
+				console.log( error.message);
+			}
+		};
 
-        // Define os dados recebidos no estado
-        setDados(response.data);
-      } catch (error) {
-        // Em caso de erro, define o erro no estado
-        setErro(error);
-      }
-    };
-
-    // Chama a função de busca de dados
-    fetchData();
-  }, [])
+		fetchData();
+	}, [] );
 
 	return (
 		<form>
@@ -47,7 +42,7 @@ const ProjectForm = ( { btnText } ) => {
 				placeholder="Insira orçamento total"
 				handleOnChange=""
 			></InputText>
-			<Select text="Selecione a categoria"></Select>
+			<Select text="Selecione a categoria" options={dados}></Select>
 			<SubmitButton text={ btnText }></SubmitButton>
 		</form>
 	);
