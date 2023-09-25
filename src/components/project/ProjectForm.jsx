@@ -7,7 +7,7 @@ import Select from "../form/Select";
 
 import './ProjectForm.scss';
 
-const ProjectForm = ( { btnText } ) => {
+const ProjectForm = async ( { btnText } ) => {
 
 	const [ dados, setDados ] = useState( null );
 
@@ -23,7 +23,7 @@ const ProjectForm = ( { btnText } ) => {
 		};
 
 		fetchData();
-	}, [] );
+	});
 
 	return (
 		<form>
