@@ -1,3 +1,13 @@
 section.new_project {
-	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	h1{
+		font-size: 2rem;
+		margin-bottom: 20px;
+	}
+	p{
+		font-size: 1.5rem;
+		margin-bottom: 20px;
+	}
 }

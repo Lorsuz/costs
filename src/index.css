@@ -42,6 +42,8 @@ label {
 
 body {
   overflow-x: hidden;
+	background: #F0EEF0;
+
 }
 body::-webkit-scrollbar {
   width: 5px;
